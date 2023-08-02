@@ -28,3 +28,14 @@ a Nice litle Carmenu with nice Features
     - Wasch
 
 ![image](https://github.com/Partyleonyt/pl_personal/assets/78225189/859583d3-a002-4024-a659-bee7c0da2fb5)
+
+**Admin Menu** and Aduty
+
+- Noclip
+    - Noclip Speed
+- Names
+- Vanish
+- Marker Teleport
+- some more features
+
+  ![image](https://github.com/Partyleonyt/pl_personal/assets/78225189/293ec2fd-0879-4b5d-ab99-0f1ac24eea19)
