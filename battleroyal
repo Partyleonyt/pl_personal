@@ -1,0 +1,46 @@
+$engine: 3
+$onesync: on
+name: Battle Royal
+author: Battle Royal
+description: Ein Battle Royal Server
+
+tasks:
+  # Download default CFX resources
+  - action: download_github
+    src: https://github.com/citizenfx/cfx-server-data
+    ref: master
+    subpath: resources
+    dest: ./resources/[cfx-default]
+
+ - action: connect_database
+
+  - action: download_github
+    src: https://github.com/Bob74/bob74_ipl
+    ref: master
+    dest: ./resources/[standalone]/bob74_ipl
+  - action: download_github
+    src: https://github.com/AvarianKnight/pma-voice
+    ref: main
+    dest: ./resources/[standalone]/pma-voice
+
+  - action: download_github
+    src: https://github.com/eliakoh/brv
+    ref: main
+    dest: ./tmp/[battleroyalev]
+
+  - action: query_database
+    file: ./tmp/[battleroyalev]/sql/battleroyalev.sql
+  - action: download_file
+    path: ./tmp/files/oxmysql.zip
+    url: https://github.com/overextended/oxmysql/releases/latest/download/oxmysql.zip
+ - action: move_path
+    src: ./tmp/[battleroyalev]/
+    dest: ./resources/[battleroyalev]
+  - action: unzip
+    dest: ./resources/[standalone]
+    src: ./tmp/files/oxmysql.zip
+
+
+  ## Cleanup
+  - action: remove_path
+    path: ./tmp
